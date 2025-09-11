@@ -1,3 +1,5 @@
-# Shri Someshwara Temple Hoskeri Website
+# Shri Someshwara Temple Hoskeri - Website (v4)
 
-Final v3 cultural-modern responsive site.
+This package contains the full site (7 pages) with assets.
+
+Replace the repository contents with these files and push to GitHub to deploy.
