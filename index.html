@@ -1,82 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shri Someshwara Temple - Hoskeri</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shri Someshwara Temple Hoskeri</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo"><span class="title">Shri Someshwara Temple</span></div>
-      <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">☰</button>
-      <nav class="nav-links" id="nav-links">
-        <button class="close-btn" id="close-btn">✖</button>
-        <a href="index.html">Home</a>
-        <a href="temple-info.html">Temple Info</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="donations.html">Donations</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<!-- TOPBAR with OM and small title -->
+<div class="topbar">
+  <div class="container"><span class="om">ॐ</span><span class="top-text">Shri Someshwara Prasanna</span></div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" role="banner">
+  <div class="nav-inner container">
+    <div class="brand">
+      <div class="logo"><img src="assets/images/main-god.jpg" alt="logo" style="width:56px;height:56px;object-fit:cover;border-radius:8px"></div>
+      <div>
+        <div class="title">Shri Someshwara Temple</div>
+        <div class="subtitle">Hoskeri, Gokarna</div>
+      </div>
     </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Welcome to Shri Someshwara Temple</h1>
-    <p>Hoskeri, Gokarna – A sacred place of devotion and culture.</p>
-  </section>
+    <nav class="navlinks" role="navigation" aria-label="Main">
+      <a href="index.html" class="active">Home</a>
+      <a href="temple-info.html">Temple Info</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="donations.html">Donations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <!-- About -->
-  <section class="content">
-    <h2>About the Temple</h2>
-    <p>The Shri Someshwara Temple of Hoskeri is a spiritual hub for devotees seeking divine blessings. Rooted in tradition, the temple is dedicated to Lord Shiva and stands as a cultural landmark of the region.</p>
-  </section>
+    <button class="hamburger" aria-label="Open menu" aria-haspopup="true">☰</button>
+  </div>
+</header>
 
-  <!-- Gallery -->
-  <section class="content">
-    <h2>Gallery</h2>
-    <a href="gallery.html" class="btn">View Gallery</a>
-  </section>
+<!-- Mobile slide-in panel + overlay -->
+<div class="mobile-overlay"></div>
+<aside class="mobile-panel" aria-hidden="true">
+  <button class="close" aria-label="Close menu">✖</button>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="temple-info.html">Temple Info</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="donations.html">Donations</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
 
-  <!-- Donations -->
-  <section class="content">
-    <h2>Support the Temple</h2>
-    <p>Your generous donations help preserve traditions.</p>
-    <a href="donations.html" class="btn">Donate Now</a>
-  </section>
 
-  <!-- Contact -->
-  <section class="content">
-    <h2>Contact Us</h2>
-    <a href="contact.html" class="btn">Get in Touch</a>
-  </section>
-
-  <!-- Map -->
-  <section class="content">
-    <h2>Temple Location</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." height="300" loading="lazy"></iframe>
+<main>
+  <section class="hero pattern-section" aria-labelledby="main-god-title">
+    <div class="hero-card container">
+      <div class="hero-media"><img src="assets/images/main-god.jpg" alt="Shri Someshwara Hoskeri"></div>
+      <div class="hero-content">
+        <h1 id="main-god-title">Shri Someshwara Hoskeri</h1>
+        <p class="lead">The main deity of our temple. May peace and prosperity be upon all devotees.</p>
+        <div style="margin-top:12px"><span class="name-badge">Shri Someshwara Hoskeri</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Shri Someshwara Temple Hoskeri, Gokarna</p>
-    <p>Site version 1.0 | Made with ❤️ by Devotees</p>
-  </footer>
+  <section class="section container">
+    <div class="card">
+      <h2>Daily Rituals</h2>
+      <p>Morning & evening aarti, bhajans and regular poojas for devotees. All are welcome to participate.</p>
+    </div>
+  </section>
 
-  <!-- Script -->
-  <script>
-    const hamburger = document.getElementById("hamburger-btn");
-    const closeBtn = document.getElementById("close-btn");
-    const navLinks = document.getElementById("nav-links");
+  <section class="section pattern-section">
+    <div class="container">
+      <h2>Gallery Preview</h2>
+      <div class="gallery-grid">
+        <img src="assets/images/sample1.jpg" alt="gallery1">
+        <img src="assets/images/sample2.jpg" alt="gallery2">
+        <img src="assets/images/sample3.jpg" alt="gallery3">
+      </div>
+    </div>
+  </section>
 
-    hamburger.addEventListener("click", () => navLinks.classList.add("active"));
-    closeBtn.addEventListener("click", () => navLinks.classList.remove("active"));
-  </script>
+  <section class="section container">
+    <div class="card">
+      <h2>Announcements</h2>
+      <ul class="events">
+        <li><strong>Mar 21</strong> — Maha Shivratri Celebrations</li>
+        <li><strong>Oct</strong> — Navratri & Vijayadashami</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2>Location</h2>
+    <div class="card map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2511320290103!2d74.3155!3d14.5469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbe83f9a2a5cf05%3A0x1d32b2b9c51d8eaf!2sGokarna%20Temple!5e0!3m2!1sen!2sin!4v1234567890" height="300" loading="lazy"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div>© 2025 Shri Someshwara Temple Hoskeri, Gokarna</div>
+    <small>Version 1.0 · Site made by Devotees</small>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
