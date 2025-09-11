@@ -1,23 +1,316 @@
+/* ==========================================================================
+   assets/css/style.css
+   - Updated: Mobile hamburger + slide-down panel + improved coding style
+   - Paste/replace entire file contents with this
+   ========================================================================== */
+
+/* === 1) Fonts & root variables === */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@300;400;600&display=swap');
-:root{--maroon:#6b0f0f;--saffron:#ff9933;--gold:#d4a017;--bg:#fffaf2;--card:#fff}
-*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:'Poppins',sans-serif;background:var(--bg);color:#222}
-.container{max-width:1100px;margin:0 auto;padding:24px}
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:linear-gradient(90deg,var(--maroon),#5a0b0b);color:#fff;position:sticky;top:0;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
-.site-header .brand{display:flex;align-items:center;gap:12px}.logo{width:56px;height:56px;object-fit:cover;border-radius:8px;background:#fff;padding:6px}.brand-text h1{font-family:'Merriweather',serif;margin:0;font-size:1.25rem;letter-spacing:0.5px}.brand-text .sub{margin:0;font-size:0.85rem;opacity:0.9}
-.main-nav .nav-list{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}.main-nav .nav-list a{color:#fff;text-decoration:none;padding:8px 6px;border-radius:6px;font-weight:600;transition:all .2s ease}.main-nav .nav-list a:hover,.main-nav .nav-list a.active{background:rgba(255,255,255,0.06);box-shadow:inset 0 -3px 0 var(--saffron);color:var(--gold)}
-.hamburger{display:none;background:transparent;border:0;cursor:pointer;padding:8px;align-items:center}.hamburger span{display:block;width:24px;height:2px;background:#fff;margin:4px 0;border-radius:2px;transition:all .2s}
-.mobile-panel{display:none;position:fixed;top:64px;left:0;right:0;background:linear-gradient(180deg,rgba(107,15,15,0.98),#4a0707);color:#fff;padding:18px;z-index:998}
-.mobile-panel ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}.mobile-panel a{color:#fff;text-decoration:none;font-weight:600;padding:10px;border-radius:6px}
-.hero{background-image:url('../images/temple-hero.jpg');background-size:cover;background-position:center;height:70vh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;padding:40px}
-.hero .hero-inner{background:linear-gradient(180deg,rgba(0,0,0,0.25),rgba(0,0,0,0.25));padding:28px;border-radius:12px}
-.hero h1{font-family:'Merriweather',serif;font-size:2.6rem;margin:6px 0}.hero h2{font-family:'Merriweather',serif;margin:0;font-size:1rem;opacity:0.9}.hero .lead{max-width:720px;margin:12px auto;font-size:1.05rem;color:#fff;opacity:0.95}
-.cta{display:inline-block;background:var(--saffron);color:#6b0f0f;padding:10px 18px;border-radius:28px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.15)}
-.section{padding:32px 0}.section.alt{background:linear-gradient(180deg,#fff, #fff7ef)}
-.split{display:flex;gap:24px;align-items:center}.split .media{flex:1}.split .media img{width:100%;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}.split .content{flex:1}.split.reverse{flex-direction:row-reverse}
-.grid-3{display:flex;gap:16px}.feature{background:transparent;padding:18px;border-radius:10px;flex:1}.feature h3{color:var(--maroon);margin-top:0}
-.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.gallery-grid img{width:100%;border-radius:8px;display:block;transition:transform .25s}.gallery-grid img:hover{transform:scale(1.03)}
-.donation-wrap{display:flex;gap:20px;align-items:flex-start}.donation-qr img{width:220px;height:220px;object-fit:contain;border-radius:8px}
-.site-footer{background:var(--maroon);color:#fff;padding:12px 0;margin-top:32px}.site-footer.small p{margin:4px 0;font-size:0.95rem}.site-footer small{opacity:0.9;color:#ffd7a6}
-@media (max-width:900px){.split{flex-direction:column}.grid-3{flex-direction:column}.site-header{padding:10px 16px}.logo{width:48px;height:48px}.main-nav{display:none}.hamburger{display:flex}.mobile-panel{display:none}.hero{height:55vh;padding:20px}.hero h1{font-size:1.8rem}.container{padding:16px}.donation-wrap{flex-direction:column;align-items:center}.donation-qr img{width:180px;height:180px}.site-footer{padding:10px 0}.site-header.small-header .brand-text h1{font-size:1rem}}
-.small-cta{background:transparent;border:2px solid rgba(107,15,15,0.06);padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--maroon);font-weight:600}.small-cta.outline{border-color:var(--gold);color:var(--maroon)}.events{list-style:none;padding:0;margin:0}.events li{padding:6px 0;border-bottom:1px dashed #eee}
+
+:root {
+  --maroon:   #6b0f0f;
+  --maroon-2: #5a0b0b;
+  --saffron:  #ff9933;
+  --gold:     #d4a017;
+  --bg:       #fffaf2;
+  --card:     #ffffff;
+  --muted:    #666666;
+  --max-width: 1100px;
+
+  --ease: 300ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* === 2) Global reset & utilities === */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: #222;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+img { max-width: 100%; display: block; height: auto; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 24px; }
+
+/* Focus styles for accessibility */
+:focus { outline: 3px solid rgba(212,160,23,0.18); outline-offset: 3px; }
+a:focus { outline: none; }
+
+/* === 3) NAVIGATION — START (clear, maintainable) === */
+/* Header wrapper */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: linear-gradient(90deg, var(--maroon), var(--maroon-2));
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+/* Container inside header */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Logo / brand */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+.logo img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; background: #fff; padding: 6px; }
+.logo .title {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.logo .subtitle {
+  font-size: 0.85rem;
+  opacity: 0.95;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Desktop navigation list */
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Individual nav links (desktop) */
+.nav-links a {
+  display: inline-block;
+  padding: 8px 10px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: transform var(--ease), color var(--ease), background-color var(--ease);
+  letter-spacing: 0.2px;
+}
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a.active {
+  background: rgba(255,255,255,0.04);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;                 /* shown on small screens via media query */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;               /* visible, tappable */
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+/* Close button inside mobile panel */
+.close-btn {
+  display: none; /* shown only in mobile panel */
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+}
+
+/* === NAVIGATION — MOBILE PANEL / SLIDE-DOWN overlay === */
+/* Mobile styles (breakpoint) */
+@media (max-width: 900px) {
+
+  /* hide desktop nav and show hamburger */
+  .nav-links { display: none; }  /* desktop nav hidden on small screens */
+  .hamburger { display: inline-flex; align-items:center; justify-content:center; }
+
+  /* Slide-down overlay: reuse the same .nav-links element as panel */
+  /* when JS toggles .active on the #nav-links element, panel slides down */
+  /* Using ID selector for specificity if HTML uses id="nav-links" */
+  #nav-links,
+  .nav-links.panel { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;                 /* full-screen overlay panel */
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    gap: 16px;
+    background: linear-gradient(180deg, rgba(107,15,15,0.98), var(--maroon-2));
+    transform: translateY(-110%);
+    transition: transform var(--ease);
+    z-index: 9998;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* When activated via JS: bring down */
+  #nav-links.active,
+  .nav-links.panel.active { transform: translateY(0); }
+
+  /* Large, touch-friendly links */
+  #nav-links a,
+  .nav-links.panel a {
+    font-size: 1.15rem;
+    padding: 16px 12px;
+    border-radius: 8px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    background: transparent;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  #nav-links a:active,
+  .nav-links.panel a:active { background: rgba(255,255,255,0.03); }
+
+  /* Close button visible in the panel - top-right */
+  .close-btn { display: inline-block; position: absolute; top: 12px; right: 16px; }
+
+  /* Ensure brand readable on mobile */
+  .logo .title { font-size: 1rem; }
+  .logo img { width: 48px; height: 48px; }
+}
+
+/* Small touch-friendly spacing for all buttons/links */
+button, .cta, .small-cta { touch-action: manipulation; -webkit-tap-highlight-color: rgba(0,0,0,0.06); }
+
+/* === 4) HERO === */
+.hero {
+  background-image: url('../images/temple-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  min-height: 64vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 20px;
+}
+.hero .hero-inner {
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.18));
+  padding: 28px;
+  border-radius: 12px;
+  max-width: 900px;
+}
+.hero h1 {
+  margin: 6px 0;
+  font-family: 'Merriweather', serif;
+  font-size: 2.4rem;
+}
+.hero h2 { font-family: 'Merriweather', serif; font-size: 1rem; opacity: 0.95; }
+.hero .lead { margin-top: 12px; font-size: 1.05rem; color: #fff; opacity: 0.98; }
+
+/* CTA */
+.cta {
+  background: var(--saffron);
+  color: var(--maroon);
+  padding: 10px 18px;
+  border-radius: 28px;
+  font-weight: 800;
+  display: inline-block;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.14);
+  margin-top: 12px;
+}
+
+/* === 5) Layout sections (split, cards, gallery) === */
+.section { padding: 34px 0; }
+.section.alt { background: linear-gradient(180deg, #fff, #fff7ef); }
+
+/* Split layout */
+.split {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.split .media { flex: 1; }
+.split .content { flex: 1; }
+
+.split .media img { border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+
+/* Features row */
+.grid-3 { display: flex; gap: 16px; }
+.feature { flex: 1; padding: 12px; border-radius: 10px; }
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.gallery-grid img { border-radius: 8px; display:block; transition: transform var(--ease); }
+.gallery-grid img:hover { transform: scale(1.03); }
+
+/* Events list */
+.events { list-style: none; padding: 0; margin: 0; }
+.events li { padding: 10px 0; border-bottom: 1px dashed #eee; }
+
+/* Donation layout */
+.donation-wrap { display: flex; gap: 20px; align-items: flex-start; }
+.donation-qr img { width: 220px; height: 220px; object-fit: contain; border-radius: 8px; }
+
+/* === 6) FOOTER (compact) === */
+.site-footer {
+  background: var(--maroon);
+  color: #fff;
+  padding: 10px 0;       /* REDUCED height per request */
+  margin-top: 32px;
+}
+.site-footer .container { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.site-footer small { color: #ffd7a6; opacity: 0.95; }
+
+/* === 7) Responsive tweaks === */
+@media (max-width: 900px) {
+  .container { padding: 16px; }
+  .split { flex-direction: column; }
+  .grid-3 { flex-direction: column; }
+  .hero { min-height: 48vh; padding: 24px 12px; }
+  .hero h1 { font-size: 1.8rem; }
+  .donation-wrap { flex-direction: column; align-items: center; }
+  .donation-qr img { width: 180px; height: 180px; }
+  .card { padding: 14px; }
+}
+
+/* === 8) Minor utility classes === */
+.small-cta {
+  display:inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight:600;
+  background: transparent;
+  border: 2px solid rgba(107,15,15,0.06);
+  color: var(--maroon);
+}
+.small-cta.outline { border-color: var(--gold); }
+
+/* EOF - style.css */

@@ -8,25 +8,27 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header small-header">
-    <div class="brand">
-      <img src="assets/images/logo-placeholder.png" alt="Temple logo" class="logo">
-      <div class="brand-text">
-        <h1>Shri Someshwara Temple</h1>
-        <p class="sub">Hoskeri, Gokarna</p>
-      </div>
-    </div>
-    <nav class="main-nav">
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="temple-info.html">Temple Info</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="donations.html" class="active">Donations</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+ <header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Shri Someshwara Temple</div>
+
+    <!-- Hamburger Icon -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+      ☰
+    </button>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="nav-links">
+      <button class="close-btn" id="close-btn">✖</button>
+      <a href="index.html">Home</a>
+      <a href="temple-info.html">Temple Info</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="donations.html">Donations</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </header>
+  </div>
+</header>
+
 
   <nav class="mobile-panel" aria-hidden="true">
     <ul>
@@ -65,5 +67,19 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+  const hamburger = document.getElementById("hamburger-btn");
+  const closeBtn = document.getElementById("close-btn");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+</script>
+
 </body>
 </html>
