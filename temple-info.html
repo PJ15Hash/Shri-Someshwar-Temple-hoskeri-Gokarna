@@ -1,102 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="History, timings and festivals of Shri Someshwara Temple Hoskeri.">
-  <title>Temple Info — Shri Someshwara Temple</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temple Info - Shri Someshwara Temple</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="navbar">
-  <div class="nav-container">
-    <div class="logo">Shri Someshwara Temple</div>
-
-    <!-- Hamburger Icon -->
-    <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
-      ☰
-    </button>
-
-    <!-- Navigation Links -->
-    <nav class="nav-links" id="nav-links">
-      <button class="close-btn" id="close-btn">✖</button>
-      <a href="index.html">Home</a>
-      <a href="temple-info.html">Temple Info</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="donations.html">Donations</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-
-  <nav class="mobile-panel" aria-hidden="true">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="temple-info.html">Temple Info</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="donations.html">Donations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section class="section">
-      <div class="container">
-        <h2>History</h2>
-        <div class="card">
-          <p>The Someshwar Temple in Hoskeri is a centuries-old shrine dedicated to Lord Shiva. It has been a center of faith, culture, and community service for generations.</p>
-        </div>
-
-        <h2>Darshan Timings</h2>
-        <div class="card">
-          <p>Morning: 6 AM – 12 PM<br>Evening: 4 PM – 9 PM</p>
-        </div>
-
-        <h2>Daily Rituals</h2>
-        <div class="card">
-          <p>Morning & Evening Aarti, Bhajans, and Special Poojas conducted daily.</p>
-        </div>
-
-        <h2>Festivals</h2>
-        <div class="card">
-          <p>Rath Yatra, Diwali, Navratri are celebrated with grandeur, involving devotees from surrounding villages.</p>
-        </div>
-
-        <h2>Event Calendar</h2>
-        <div class="card">
-          <ul>
-            <li>Jan 14 – Makar Sankranti Special Pooja</li>
-            <li>Mar 21 – Maha Shivratri Celebrations</li>
-            <li>Oct – Navratri & Vijayadashami</li>
-            <li>Nov – Diwali Pooja</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Shri Someshwara Temple Hoskeri, Gokarna</p>
-      <p><small>Version: 1.0 · Site made by Your Name</small></p>
+    <div class="nav-container">
+      <div class="logo"><span class="title">Shri Someshwara Temple</span></div>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">☰</button>
+      <nav class="nav-links" id="nav-links">
+        <button class="close-btn" id="close-btn">✖</button>
+        <a href="index.html">Home</a>
+        <a href="temple-info.html">Temple Info</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="donations.html">Donations</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
+
+  <section class="content">
+    <h2>Temple History & Significance</h2>
+    <p>The Someshwara Temple in Hoskeri is dedicated to Lord Shiva and has a rich history of rituals and traditions.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Shri Someshwara Temple Hoskeri, Gokarna</p>
+    <p>Site version 1.0 | Made with ❤️ by Devotees</p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- Script -->
   <script>
-  const hamburger = document.getElementById("hamburger-btn");
-  const closeBtn = document.getElementById("close-btn");
-  const navLinks = document.getElementById("nav-links");
+    const hamburger = document.getElementById("hamburger-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const navLinks = document.getElementById("nav-links");
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.add("active");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
-</script>
+    hamburger.addEventListener("click", () => navLinks.classList.add("active"));
+    closeBtn.addEventListener("click", () => navLinks.classList.remove("active"));
+  </script>
 
 </body>
 </html>

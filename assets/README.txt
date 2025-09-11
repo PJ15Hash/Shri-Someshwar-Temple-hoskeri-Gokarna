@@ -1,0 +1,1 @@
+Place your temple images, gallery photos, and QR code here.
