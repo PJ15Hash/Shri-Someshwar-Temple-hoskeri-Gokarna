@@ -1,0 +1,7 @@
+change the temple info name to About and remove timings, display only temple information which states About the Temple History – A warm storytelling section with background, origins, and legends.
+create a new section and page in nav bar for timings display it in a creative-modern way or table format (the timings are as follows :- Morning 7am-2pm Evening 4PM-9PM ) 
+In contact page add location embeded map, and in contact add 2 phone numbers one for temple landline and one for bhat with phone symbol followed by it
+next in gallery also make more sections to add videos 
+in home page 1st section right side followed by image make it shri someshwara temple hoskeri gokarna then below remove'The main deity of our temple. May peace and prosperity be upon all devotees.' instead add ' | ॐ नमः शिवाय | and then below there is a saffron button which is fixed , so make it clickable and take it to about section.
+afterwards there is daily rituals change it to daily rituals , festivals and weekly activities  below mention daily general dharshan timings 7AM-8PM and festivals shankranti,Mahashivratri, chaitra punav, ganesh chaturti,.. at last let this sentence be mentioned Morning & evening aarti, bhajans and regular poojas for devotees. All are welcome to participate.
+after gallery preview remove location section and add Trust & Committee – Add temple trust details, committee members short preview type modern style and create another page to display full details followed by a photo and description of 20 members
