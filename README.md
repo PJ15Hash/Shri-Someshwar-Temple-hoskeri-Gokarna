@@ -1,2 +1,2 @@
-# Someshwara Temple Website v5
-Updated with cultural-modern design, sliders, and mobile fixes.
+# Someshwara Temple Website v5.1
+Verified build with fixes.

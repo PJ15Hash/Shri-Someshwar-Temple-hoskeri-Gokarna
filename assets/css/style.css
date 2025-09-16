@@ -1,1 +1,16 @@
-/* style.css v5: cultural-modern theme, responsive nav, hero fix, gallery slider, committee slider, sticky footer */
+
+/* style.css v5.1 verified */
+body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#333; }
+.top-banner { text-align:center; padding:5px; background:#f4c542; font-weight:bold; color:#a33; }
+.navbar { background:#a33; }
+.navbar ul { list-style:none; margin:0; padding:0; display:flex; justify-content:center; flex-wrap:wrap; }
+.navbar li { margin:0; }
+.navbar a { display:block; padding:10px 15px; color:#fff; text-decoration:none; }
+.navbar a:hover { background:#d66; }
+.hero { text-align:center; padding:20px; }
+.hero img { max-width:300px; height:auto; }
+.hero .btn { display:inline-block; padding:10px 20px; background:#f4c542; color:#000; text-decoration:none; margin-top:10px; }
+footer { background:#a33; color:#fff; text-align:center; padding:10px; position:relative; bottom:0; width:100%; }
+@media(max-width:768px) {
+  .hero img { max-width:90%; }
+}
