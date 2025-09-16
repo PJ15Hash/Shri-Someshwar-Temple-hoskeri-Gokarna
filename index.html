@@ -1,65 +1,90 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shri Someshwara Temple Hoskeri</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shri Someshwara Temple Hoskeri</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
-  <div class="top-text">ॐ Shri Someshwara Prasanna</div>
-  <header class="navbar container">
-    <div class="logo">Shri Someshwara Temple</div>
-    <ul class="nav-links" role="navigation">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="timings.html">Timings</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="committee.html">Committee</a></li>
-    </ul>
-    <div class="hamburger" aria-label="Open menu">☰</div>
-  </header>
+<div class="topbar"><div class="container"><span class="om">ॐ</span><span class="top-text">Shri Someshwara Prasanna</span></div></div>
+<header class="navbar" role="banner">
+  <div class="nav-inner container">
+    <div class="brand">
+      <img src="assets/images/main-god.jpg" alt="logo">
+      <div><div class="title">Shri Someshwara Temple</div><div class="subtitle">Hoskeri, Gokarna</div></div>
+    </div>
+    <nav class="navlinks" role="navigation" aria-label="Main">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="timings.html">Timings</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="donations.html">Donations</a>
+      <a href="contact.html">Contact</a>
+      <a href="committee.html">Committee</a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu">☰</button>
+  </div>
+</header>
+<div class="mobile-overlay"></div>
+<aside class="mobile-panel" aria-hidden="true">
+  <button class="close" aria-label="Close menu">✖</button>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="timings.html">Timings</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="donations.html">Donations</a>
+    <a href="contact.html">Contact</a>
+    <a href="committee.html">Committee</a>
+  </nav>
+</aside>
 
-  <main>
-    <section class="hero container">
-      <div class="hero-text">
+<main>
+  <section class="hero" id="home">
+    <div class="hero-card container">
+      <div class="hero-media"><img src="assets/images/main-god.jpg" alt="Shri Someshwara Hoskeri"></div>
+      <div class="hero-content">
         <h1>Shri Someshwara Temple Hoskeri, Gokarna</h1>
-        <div class="mantra">| ॐ नमः शिवाय |</div>
-        <a href="about.html" class="btn">About the Temple</a>
+        <p class="mantra">| ॐ नमः शिवाय |</p>
+        <div class="name-badge" data-scroll="#about">About the Temple</div>
       </div>
-      <div class="hero-img"><img src="assets/images/main-god.jpg" alt="Shri Someshwara"></div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section container">
-      <div class="card"><h2>Daily Rituals, Festivals & Weekly Activities</h2>
+  <section class="section container">
+    <div class="card">
+      <h2>Daily Rituals, Festivals and Weekly Activities</h2>
       <p><strong>General Dharshan Timings:</strong> 7AM - 8PM</p>
       <p><strong>Festivals:</strong> Makar Sankranti, Maha Shivratri, Chaitra Purnima, Ganesh Chaturthi</p>
-      <p>Morning & evening aarti, bhajans and regular poojas for devotees. All are welcome to participate.</p></div>
-    </section>
+      <p style="margin-top:12px;">Morning & evening aarti, bhajans and regular poojas for devotees. All are welcome to participate.</p>
+    </div>
+  </section>
 
-    <section class="section container">
+  <section class="section pattern-section">
+    <div class="container">
       <h2>Gallery Preview</h2>
-      <div class="slider container-small">
-        <img src="assets/images/gallery1.jpg" alt="g1">
-        <img src="assets/images/gallery2.jpg" alt="g2">
-        <img src="assets/images/gallery3.jpg" alt="g3">
+      <div class="gallery-grid">
+        <img src="assets/images/sample1.jpg" alt="g1">
+        <img src="assets/images/sample2.jpg" alt="g2">
+        <img src="assets/images/sample3.jpg" alt="g3">
       </div>
-      <div class="slider-controls"><a class="view-all btn" href="gallery.html">View All</a></div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section container">
-      <h2>Trust & Committee</h2>
-      <div class="committee-slider">
-        <div class="member"><img src="assets/images/members/member1.jpg" alt="Member 1"><p><strong>Member 1</strong><br><span style="color:var(--muted)">Role 1</span></p></div>
-        <div class="member"><img src="assets/images/members/member2.jpg" alt="Member 2"><p><strong>Member 2</strong><br><span style="color:var(--muted)">Role 2</span></p></div>
-        <div class="member"><img src="assets/images/members/member3.jpg" alt="Member 3"><p><strong>Member 3</strong><br><span style="color:var(--muted)">Role 3</span></p></div>
-        <div class="member"><img src="assets/images/members/member4.jpg" alt="Member 4"><p><strong>Member 4</strong><br><span style="color:var(--muted)">Role 4</span></p></div>
-        <div class="member"><img src="assets/images/members/member5.jpg" alt="Member 5"><p><strong>Member 5</strong><br><span style="color:var(--muted)">Role 5</span></p></div>
-        <div class="member"><img src="assets/images/members/member6.jpg" alt="Member 6"><p><strong>Member 6</strong><br><span style="color:var(--muted)">Role 6</span></p></div>
-        <div class="member"><img src="assets/images/members/member7.jpg" alt="Member 7"><p><strong>Member 7</strong><br><span style="color:var(--muted)">Role 7</span></p></div>
-        <div class="member"><img src="assets/images/members/member8.jpg" alt="Member 8"><p><strong>Member 8</strong><br><span style="color:var(--muted)">Role 8</span></p></div>
-      </div>
-      <div style="margin-top:12px"><a class="btn" href="committee.html">View Full Committee</a></div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="container">© 2025 Shri Someshwara Temple Hoskeri, Gokarna</div></footer>
-  <script src="assets/js/main.js" defer></script>
-</body>
-</html>
+  <section class="section container">
+    <h2>Trust & Committee</h2>
+    <div class="committee-preview">
+      <div class="member-card"><img src="assets/images/members/member1.jpg" alt="m1"><div><strong>Member 1</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
+      <div class="member-card"><img src="assets/images/members/member2.jpg" alt="m2"><div><strong>Member 2</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
+      <div class="member-card"><img src="assets/images/members/member3.jpg" alt="m3"><div><strong>Member 3</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
+      <div class="member-card"><img src="assets/images/members/member4.jpg" alt="m4"><div><strong>Member 4</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
+      <div class="member-card"><img src="assets/images/members/member5.jpg" alt="m5"><div><strong>Member 5</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
+    </div>
+    <p style="margin-top:12px;"><a class="btn" href="committee.html">View full committee</a></p>
+  </section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container"><div>© 2025 Shri Someshwara Temple Hoskeri, Gokarna</div><small>Version 1.0 · Site made by Devotees</small></div>
+</footer>
+<script src="assets/js/main.js" defer></script>

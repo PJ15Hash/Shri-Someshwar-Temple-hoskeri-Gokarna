@@ -1,47 +1,51 @@
 document.addEventListener('DOMContentLoaded', function(){
-  document.body.classList.add('with-footer');
   const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  if(hamburger && navLinks){
-    hamburger.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+  const panel = document.querySelector('.mobile-panel');
+  const overlay = document.querySelector('.mobile-overlay');
+  const closeBtn = document.querySelector('.mobile-panel .close');
+  const aboutBtns = document.querySelectorAll('[data-scroll]');
+
+  if(hamburger){
+    hamburger.addEventListener('click', ()=>{ panel.classList.add('open'); overlay.classList.add('show'); });
   }
-  document.querySelectorAll('.slider').forEach(slider => {
-    const slidesWrap = document.createElement('div');
-    slidesWrap.className = 'slides';
-    const imgs = slider.querySelectorAll('img');
-    imgs.forEach(img => {
-      const slide = document.createElement('div');
-      slide.className = 'slide';
-      const newImg = document.createElement('img');
-      newImg.src = img.src;
-      newImg.alt = img.alt;
-      slide.appendChild(newImg);
-      slidesWrap.appendChild(slide);
+  if(closeBtn){
+    closeBtn.addEventListener('click', ()=>{ panel.classList.remove('open'); overlay.classList.remove('show'); });
+  }
+  if(overlay){
+    overlay.addEventListener('click', ()=>{ panel.classList.remove('open'); overlay.classList.remove('show'); });
+  }
+
+  aboutBtns.forEach(btn=>{
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      const sel = this.getAttribute('data-scroll');
+      const target = document.querySelector(sel);
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); panel.classList.remove('open'); overlay.classList.remove('show'); }
     });
-    // clear original and append wrapper
-    slider.innerHTML = '';
-    slider.appendChild(slidesWrap);
-    const slides = slidesWrap.querySelectorAll('.slide');
-    if(slides.length <= 1) return;
-    let index = 0;
-    const next = ()=>{
-      index = (index + 1) % slides.length;
-      slidesWrap.style.transform = 'translateX(' + (-index * 100) + '%)';
-    };
-    let interval = setInterval(next, 3500);
-    slider.addEventListener('mouseenter', ()=> clearInterval(interval));
-    slider.addEventListener('mouseleave', ()=> interval = setInterval(next, 3500));
   });
 
-  // video buttons (open overlay iframe)
-  document.querySelectorAll('[data-video]').forEach(btn => {
+  // Image lightbox
+  document.querySelectorAll('.gallery-grid img').forEach(img=>{
+    img.addEventListener('click', ()=>{
+      const src = img.src;
+      const lb = document.createElement('div');
+      lb.style.position='fixed'; lb.style.inset=0; lb.style.background='rgba(0,0,0,0.85)'; lb.style.display='flex'; lb.style.alignItems='center'; lb.style.justifyContent='center'; lb.style.zIndex=99999;
+      const im = document.createElement('img'); im.src = src; im.style.maxWidth='90%'; im.style.maxHeight='90%'; im.style.borderRadius='8px';
+      lb.appendChild(im);
+      lb.addEventListener('click', ()=>document.body.removeChild(lb));
+      document.body.appendChild(lb);
+    });
+  });
+
+  // Video overlay for elements with data-video
+  document.querySelectorAll('[data-video]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const src = btn.getAttribute('data-video');
       const lb = document.createElement('div');
       lb.style.position='fixed'; lb.style.inset=0; lb.style.background='rgba(0,0,0,0.95)'; lb.style.display='flex'; lb.style.alignItems='center'; lb.style.justifyContent='center'; lb.style.zIndex=99999;
-      const iframe = document.createElement('iframe'); iframe.src=src; iframe.width='90%'; iframe.height='70%'; iframe.frameBorder='0'; iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'; iframe.allowFullscreen=true;
+      const iframe = document.createElement('iframe'); iframe.src = src; iframe.width='90%'; iframe.height='70%'; iframe.frameBorder='0'; iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'; iframe.allowFullscreen = true;
       lb.appendChild(iframe);
-      lb.addEventListener('click', ()=> document.body.removeChild(lb));
+      lb.addEventListener('click', ()=>document.body.removeChild(lb));
       document.body.appendChild(lb);
     });
   });
