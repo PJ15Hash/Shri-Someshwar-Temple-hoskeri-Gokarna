@@ -1,0 +1,7 @@
+1. firstly above the navigation bar replace ॐ Shri Someshwara Prasanna in this style | ॐ नमः शिवाय | keep the rest same 
+2. in the main hero section there is a about the temple button which should redirect to the about page 
+3.mobile adjustments :- in mobile first section after the photo there is too much gap in between reduce it accordingly 
+4. The announcements section must be added after gallery preview section 
+5. the style of gallery preview must changed to single style auto slider followed by view all button also adjust and scale it properly for mobile view also,
+6.in home section the trust and commitee section style must be changed make it short auto preview style slider or any nice creative idea that you have note inside it must have a short detail like members name and short role , let the view full committee be same but make it button style to redirect 
+7.in footer remove site made by devotees , also in mobile the footer is not fixed to bottom in some pages like timings check all once again again and keep it fixed to bottom position
