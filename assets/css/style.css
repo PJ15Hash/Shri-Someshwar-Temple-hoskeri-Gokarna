@@ -121,3 +121,18 @@ img{max-width:100%;height:auto;display:block}
     line-height: 1.2 !important; /* compact text spacing */
   }
 }
+/* DEBUG: highlight hero elements in mobile */
+@media (max-width: 768px) {
+  .hero-card {
+    border: 2px dashed red !important;
+    background: rgba(255,0,0,0.05);
+  }
+  .hero-media {
+    border: 2px dashed blue !important;
+    background: rgba(0,0,255,0.05);
+  }
+  .hero-content {
+    border: 2px dashed green !important;
+    background: rgba(0,255,0,0.05);
+  }
+}
