@@ -91,7 +91,7 @@ img{max-width:100%;height:auto;display:block}
   .hero-card{
     flex-direction:column;
     align-items:center;
-    gap:8px;             /* reduced vertical gap */
+    gap:4px;             /* reduced vertical gap */
     padding-top:0;       /* no extra space at top */
     padding-bottom:0;    /* no extra space at bottom */
   }
