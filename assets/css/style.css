@@ -102,3 +102,22 @@ img{max-width:100%;height:auto;display:block}
   .committee-preview{justify-content:center}
   .container{padding:12px}
 }
+/* Fix extra gap between hero image and text in mobile view */
+@media (max-width: 768px) {
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.2rem !important; /* reduce gap between children */
+  }
+
+  .hero-media img {
+    margin-bottom: 0.2rem !important; /* tighten image spacing */
+  }
+
+  .hero-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    line-height: 1.2 !important; /* compact text spacing */
+  }
+}
