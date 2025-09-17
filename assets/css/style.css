@@ -115,3 +115,30 @@ img{max-width:100%;height:auto;display:block}
     margin-top: auto; /* stick footer at bottom */
   }
 }
+/* ===== Universal sticky footer ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure body fills viewport */
+}
+
+main {
+  flex: 1 0 auto; /* Main content grows, pushes footer down */
+}
+
+.site-footer {
+  flex-shrink: 0; /* Footer doesn't shrink */
+  margin-top: auto; /* Stick to bottom */
+}
+
+/* Optional: Mobile-specific tweaks */
+@media (max-width: 900px) {
+  body {
+    padding-bottom: 0; /* Ensure no extra spacing on mobile */
+  }
+}
