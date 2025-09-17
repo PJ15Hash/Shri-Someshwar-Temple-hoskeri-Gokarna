@@ -90,20 +90,10 @@ img{max-width:100%;height:auto;display:block}
   .hamburger{display:inline-block}
   .hero-card{flex-direction:column;align-items:center}
   .hero-media{width:92%}
-  .hero-media img{height:280px}
-  .hero-content{text-align:center}
+  .hero-media img{height:280px;margin-bottom:0 !important}
+  .hero-content{text-align:center;margin-top:8px}
   .name-badge{margin:12px auto 0;display:inline-block}
   .about-section{text-align:center}
   .committee-preview{justify-content:center}
   .container{padding:12px}
-}
-
-/* Fix mobile gap under hero image */
-@media(max-width:900px){
-  .hero-media img{
-    display:block !important;
-    margin:0 !important;
-    padding:0 !important;
-    vertical-align:middle !important;
-  }
 }
