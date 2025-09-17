@@ -1,5 +1,1 @@
-# Shri Someshwara Temple Hoskeri - Website (v4)
-
-This package contains the full site (7 pages) with assets.
-
-Replace the repository contents with these files and push to GitHub to deploy.
+# Shri Someshwara Temple - v4.2 Stable\nDeploy to GitHub Pages. Replace placeholder images in assets/images with real photos as needed.\n
