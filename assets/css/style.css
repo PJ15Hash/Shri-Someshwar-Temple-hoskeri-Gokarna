@@ -97,14 +97,8 @@ img{max-width:100%;height:auto;display:block}
   .committee-preview{justify-content:center}
   .container{padding:12px}
 
-  /* Reduce extra gap in hero section on mobile */
-  .hero-card {
-      gap: 8px; /* Reduce space between image and text */
-  }
+  /* Reduce gap between hero image and text without changing image */
   .hero-content {
-      margin-top: 0; /* Remove extra top margin */
-  }
-  .hero-media img {
-      margin-bottom: 0; /* Remove extra bottom margin */
+      margin-top: 8px;
   }
 }
