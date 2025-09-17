@@ -1,1 +1,0 @@
-# Changelog - v4.2 (stable)\n- Small fixes from v4 base.\n
