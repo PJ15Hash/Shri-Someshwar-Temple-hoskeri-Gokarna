@@ -97,8 +97,8 @@ img{max-width:100%;height:auto;display:block}
   .committee-preview{justify-content:center}
   .container{padding:12px}
 
-  /* Reduce gap between hero image and text by reducing hero-card padding only */
+  /* Correct mobile hero gap: reduce vertical spacing between image and text */
   .hero-card {
-      padding:12px 16px;
+      gap: 8px; /* smaller vertical gap between image and text */
   }
 }
