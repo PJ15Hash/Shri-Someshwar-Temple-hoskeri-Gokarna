@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div class="topbar"><div class="container"><span class="om">ॐ</span><span class="top-text">Shri Someshwara Prasanna</span></div></div>
+<div class="topbar"><div class="container"><span class="om">|| ॐ</span><span class="top-text">Shri Someshwara Prasanna ||</span></div></div>
 <header class="navbar" role="banner">
   <div class="nav-inner container">
     <div class="brand">
@@ -62,27 +62,151 @@
   </section>
 
   <section class="section pattern-section">
-    <div class="container">
-      <h2>Gallery Preview</h2>
-      <div class="gallery-grid">
-        <img src="assets/images/sample1.jpg" alt="g1">
-        <img src="assets/images/sample2.jpg" alt="g2">
-        <img src="assets/images/sample3.jpg" alt="g3">
+  <div class="container">
+    <h2>Gallery Preview</h2><br>
+    <div class="gallery-slider-container">
+      <div class="gallery-slider" id="gallerySlider">
+        <!-- Slide 1 -->
+        <div class="gallery-slide">
+          <img src="assets/images/sample1.jpg" alt="Temple View 1">
+        </div>
+        <!-- Slide 2 -->
+        <div class="gallery-slide">
+          <img src="assets/images/sample2.jpg" alt="Temple View 2">
+        </div>
+        <!-- Slide 3 -->
+        <div class="gallery-slide">
+          <img src="assets/images/sample3.jpg" alt="Temple View 3">
+        </div>
+        <!-- Slide 4 - Video Example (Optional) -->
+        <div class="gallery-slide">
+          <img src="assets/images/sample1.jpg" alt="Temple View 4">
+        </div>
       </div>
+      
+      <!-- Navigation Controls -->
+      <div class="slider-controls">
+        <button class="slider-btn" id="galleryPrev" aria-label="Previous">‹</button>
+        <button class="slider-btn" id="galleryNext" aria-label="Next">›</button>
+      </div>
+      
+      <!-- Dots Navigation -->
+      <div class="slider-dots" id="galleryDots"></div>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section container">
-    <h2>Trust & Committee</h2>
-    <div class="committee-preview">
-      <div class="member-card"><img src="assets/images/members/member1.jpg" alt="m1"><div><strong>Member 1</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
-      <div class="member-card"><img src="assets/images/members/member2.jpg" alt="m2"><div><strong>Member 2</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
-      <div class="member-card"><img src="assets/images/members/member3.jpg" alt="m3"><div><strong>Member 3</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
-      <div class="member-card"><img src="assets/images/members/member4.jpg" alt="m4"><div><strong>Member 4</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
-      <div class="member-card"><img src="assets/images/members/member5.jpg" alt="m5"><div><strong>Member 5</strong><div style="font-size:0.9rem;color:var(--muted)">Short role</div></div></div>
+  <h2>Temple Announcements</h2>
+  <div class="announcements-grid">
+    <!-- Announcement Card 1 -->
+    <div class="announcement-card">
+      <div class="announcement-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+      </div>
+      <div class="announcement-content">
+        <div class="announcement-date">January 15, 2025</div>
+        <h3>Maha Shivratri Celebrations</h3>
+        <p>Join us for the grand Maha Shivratri festivities. Special abhishekam and night-long bhajans. Prasadam will be distributed to all devotees.</p>
+        <span class="announcement-badge important">Important</span>
+      </div>
     </div>
-    <p style="margin-top:12px;"><a class="btn" href="committee.html">View full committee</a></p>
-  </section>
+
+    <!-- Announcement Card 2 -->
+    <div class="announcement-card">
+      <div class="announcement-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+      </div>
+      <div class="announcement-content">
+        <div class="announcement-date">January 10, 2025</div>
+        <h3>Special Pooja Timings</h3>
+        <p>Updated temple timings for the upcoming festival season. Morning pooja starts at 5:30 AM. Please plan your visit accordingly.</p>
+        <span class="announcement-badge event">Event</span>
+      </div>
+    </div>
+
+    <!-- Announcement Card 3 -->
+    <div class="announcement-card">
+      <div class="announcement-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </div>
+      <div class="announcement-content">
+        <div class="announcement-date">January 5, 2025</div>
+        <h3>Annadanam Program Launch</h3>
+        <p>New daily annadanam (free food distribution) program starting this month. Seeking volunteers and sponsors for this noble cause.</p>
+        <span class="announcement-badge general">General</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Replace the existing Committee section with this -->
+<section class="section container">
+  <h2>Trust & Committee</h2>
+  <div class="committee-slider-container">
+    <div class="committee-slider-wrapper">
+      <div class="committee-slider" id="committeeSlider">
+        <!-- Member 1 -->
+        <div class="committee-slide">
+          <div class="committee-member-card">
+            <img src="assets/images/members/member1.jpg" alt="Member 1">
+            <strong>Shri Ramesh Kumar</strong>
+            <div class="role">President</div>
+          </div>
+        </div>
+        <!-- Member 2 -->
+        <div class="committee-slide">
+          <div class="committee-member-card">
+            <img src="assets/images/members/member2.jpg" alt="Member 2">
+            <strong>Shri Ganesh Bhat</strong>
+            <div class="role">Vice President</div>
+          </div>
+        </div>
+        <!-- Member 3 -->
+        <div class="committee-slide">
+          <div class="committee-member-card">
+            <img src="assets/images/members/member3.jpg" alt="Member 3">
+            <strong>Shri Suresh Nayak</strong>
+            <div class="role">Secretary</div>
+          </div>
+        </div>
+        <!-- Member 4 -->
+        <div class="committee-slide">
+          <div class="committee-member-card">
+            <img src="assets/images/members/member4.jpg" alt="Member 4">
+            <strong>Shri Prakash Shetty</strong>
+            <div class="role">Treasurer</div>
+          </div>
+        </div>
+        <!-- Member 5 -->
+        <div class="committee-slide">
+          <div class="committee-member-card">
+            <img src="assets/images/members/member5.jpg" alt="Member 5">
+            <strong>Shri Vijay Hegde</strong>
+            <div class="role">Committee Member</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Controls -->
+    <div class="committee-slider-controls">
+      <button class="committee-slider-btn" id="committeePrev" aria-label="Previous">‹</button>
+      <button class="committee-slider-btn" id="committeeNext" aria-label="Next">›</button>
+    </div>
+  </div>
+  <p style="margin-top:20px; text-align:center;"><a class="btn" href="committee.html">View full committee</a></p>
+</section>
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container">
