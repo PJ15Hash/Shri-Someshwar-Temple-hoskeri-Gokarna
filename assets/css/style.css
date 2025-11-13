@@ -84,7 +84,7 @@ main {
 
 .om {
   font-family: 'Merriweather', serif;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .top-text {
@@ -503,13 +503,30 @@ main {
 /* ============================================
    GALLERY SLIDER
    ============================================ */
+.pattern-section .container {
+  display: block;
+}
+
+.pattern-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .gallery-slider-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), #fffaf2);
+  padding: 16px;
+}
+
+.gallery-slider-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .gallery-slider {
@@ -520,24 +537,25 @@ main {
 .gallery-slide {
   min-width: 100%;
   position: relative;
-  aspect-ratio: 16/9;
 }
 
 .gallery-slide img {
   width: 100%;
-  height: 100%;
+  height: 520px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 12px;
+  display: block;
 }
 
 .gallery-slide video {
   width: 100%;
-  height: 100%;
+  height: 520px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 12px;
+  display: block;
 }
 
-.slider-controls {
+.gallery-slider-inner .slider-controls {
   position: absolute;
   top: 50%;
   left: 0;
@@ -545,14 +563,15 @@ main {
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 20px;
   pointer-events: none;
+  z-index: 10;
 }
 
-.slider-btn {
+.gallery-slider-inner .slider-btn {
   pointer-events: auto;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95);
   border: none;
@@ -560,48 +579,58 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  transition: all 250ms;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--maroon);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
+  backdrop-filter: blur(8px);
 }
 
-.slider-btn:hover {
+.gallery-slider-inner .slider-btn:hover {
   background: var(--saffron);
-  transform: scale(1.1);
-  box-shadow: 0 6px 24px rgba(212, 160, 23, 0.4);
+  transform: scale(1.15);
+  box-shadow: 0 8px 28px rgba(212, 160, 23, 0.45);
 }
 
-.slider-btn:active {
+.gallery-slider-inner .slider-btn:active {
   transform: scale(0.95);
 }
 
-.slider-dots {
+.gallery-slider-inner .slider-dots {
   position: absolute;
-  bottom: 16px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 8px;
+  gap: 10px;
   z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
 }
 
-.slider-dot {
+.gallery-slider-inner .slider-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   border: none;
   cursor: pointer;
-  transition: all 250ms;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
 }
 
-.slider-dot.active {
+.gallery-slider-inner .slider-dot:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.gallery-slider-inner .slider-dot.active {
   background: var(--saffron);
-  width: 32px;
+  width: 36px;
   border-radius: 5px;
+  box-shadow: 0 0 12px rgba(255, 153, 51, 0.6);
 }
 
 /* ============================================
@@ -1219,20 +1248,42 @@ main {
   /* Gallery Slider - Mobile */
   .gallery-slider-container {
     border-radius: 12px;
+    padding: 10px;
   }
   
-  .slider-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
+  .gallery-slider-inner {
+    border-radius: 8px;
   }
   
-  .slider-controls {
-    padding: 0 8px;
+  .gallery-slide img,
+  .gallery-slide video {
+    height: 220px;
+    border-radius: 8px;
   }
   
-  .slider-dots {
+  .gallery-slider-inner .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .gallery-slider-inner .slider-controls {
+    padding: 0 6px;
+  }
+  
+  .gallery-slider-inner .slider-dots {
     bottom: 12px;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+  
+  .gallery-slider-inner .slider-dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .gallery-slider-inner .slider-dot.active {
+    width: 24px;
   }
   
   /* Committee Slider - Mobile */
